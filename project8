@@ -1,0 +1,43 @@
+## Assignment: project 8
+## Author: Brian Bonter
+
+
+use 5.14.2;
+use warnings;
+
+
+my ($userName, $zip, $string_member, $dir_member )
+
+sub main {
+	system("cls");
+	setremoveUserAccount
+	setZip
+
+
+
+
+sub removeUserAccount {
+	if (UsersExist(SERVER, $userName)) {
+		UserDelete(SERVER, $userName);
+		print "\n\n\t\tUser account $userName deleted.\n";
+          print $OUT "User account $userName deleted.\n";
+	} else {
+		print "\n\nUser: $userName does not exist in Active Directory!\n";
+          print $OUT "User: $userName does not exist in Active Directory!\n";
+	}
+}
+
+  
+  
+sub Zip {
+   use Archive::Zip qw( :ERROR_CODES :CONSTANTS );
+   my $zip = Archive::Zip->new();
+   my $dir_member = $zip->addDirectory( 'dirname/' );
+   my $string_member = $zip->addString( 'This is a test', 'stringMember.txt' );
+   $string_member->desiredCompressionMethod( COMPRESSION_DEFLATED );
+   my $file_member = $zip->addFile( 'xyz.pl', 'AnotherName.pl' );
+   unless ( $zip->writeToFileNamed('someZip.zip') == AZ_OK ) {
+       die 'write error';
+   }
+ }
+ 
